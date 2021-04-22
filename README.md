@@ -1,3 +1,30 @@
+# VoTT Docker with X11 Desktop UI and Web-based GUI
+## Run
+* It will download 'openkbs/VoTT' on-the-fly to use if not existing.
+```
+./run.sh
+```
+And, you have two ways to access the VoTT GUI:
+```
+
+1. It will pop up open X11 Desktop GUI (if your Unix Host has open X11 using 'xhost +' command and proper export DISPLAY=... setup)
+2. Or, if fail X11, use your Web Browser to open Web-based GUI
+
+http://127.0.0.1:13000/
+```
+
+Note that, currently, the build of Dockerfile can't pre-install all needed NPM packages. Hence, the above command will take a bit longer to start up and it will require the Internet access. This is something not practical for some corporations running this Container without the Internet access.
+
+## Build (to local image if desired)
+```
+./build.sh
+
+```
+
+---
+
+#### (Inherited from upstream ... )
+---
 # VoTT (Visual Object Tagging Tool)
 
 [![Build Status](https://dev.azure.com/msft-vott/VoTT/_apis/build/status/VoTT/Microsoft.VoTT?branchName=master)](https://dev.azure.com/msft-vott/VoTT/_build/latest?definitionId=25&branchName=master)
