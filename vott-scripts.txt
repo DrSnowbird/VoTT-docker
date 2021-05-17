@@ -1,0 +1,109 @@
+vott@2.2.0 react-start
+react-scripts start
+ott@2.2.0 electron-start
+node src/electron/start
+5:03:28 PM react.1    |  Starting the development server...
+5:03:28 PM electron.1 |  starting electron
+vott@2.2.0 electron:run:dev
+
+
+developer@1d2c63beaac9:~/VoTT$ npm run electron-start
+
+> vott@2.2.0 electron-start
+> node src/electron/start
+
+(node:1428) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 connect listeners added to [Socket]. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+^C
+developer@1d2c63beaac9:~/VoTT$ npm run
+Lifecycle scripts included in vott:
+  start
+    nf start -p 3000
+  pretest
+    ./node_modules/.bin/tslint 'src/**/*.ts*'
+  test
+    react-scripts test --env=jsdom --silent
+  postinstall
+    electron-builder install-app-deps
+
+available via `npm run-script`:
+  compile
+    tsc
+  build
+    react-scripts build
+  webpack:dev
+    webpack --config ./config/webpack.dev.js
+  webpack:prod
+    webpack -p --config ./config/webpack.prod.js
+  react-start
+    react-scripts start
+  electron:run:dev
+    npm run webpack:dev && electron . --remote-debugging-port=9223
+  electron:run:prod
+    npm run webpack:prod && electron . --remote-debugging-port=9223
+  electron:start:dev
+    npm run webpack:dev && npm run electron-start
+  electron:start:prod
+    npm run webpack:prod && npm run electron-start
+  electron-start
+    node src/electron/start
+  eject
+    react-scripts eject
+  release-pr
+    ./scripts/release-pr.sh
+  release-web
+    npm run build && npm run webpack:prod
+  release-ci
+    bash ./scripts/build.sh
+  release
+    npm run build && npm run webpack:prod && electron-builder
+  lintfix
+    ./node_modules/.bin/tslint 'src/**/*.ts*' --fix
+  test:ci
+    cross-env CI=true npm run test
+  test:coverage
+    npm run test -- --coverage
+  plato
+    scripts/generate-report.sh -o report -v $(node -pe "require('./package.json').version") -c $(git rev-parse --short HEAD)
+  predebug
+    npm run build && npm run webpack:dev
+developer@1d2c63beaac9:~/VoTT$ npm electron:run:dev
+
+Usage: npm <command>
+
+npm install        install all the dependencies in your project
+npm install <foo>  add the <foo> dependency to your project
+npm test           run this project's tests
+npm run <foo>      run the script named <foo>
+npm <command> -h   quick help on <command>
+npm -l             display usage info for all commands
+npm help <term>    search for help on <term>
+npm help npm       more involved overview
+
+All commands:
+
+    access, adduser, audit, bin, bugs, cache, ci, completion,
+    config, dedupe, deprecate, dist-tag, docs, doctor, edit,
+    exec, explain, explore, find-dupes, fund, get, help, hook,
+    init, install, install-ci-test, install-test, link, ll,
+    login, logout, ls, org, outdated, owner, pack, ping, prefix,
+    profile, prune, publish, rebuild, repo, restart, root,
+    run-script, search, set, shrinkwrap, star, stars, start,
+    stop, team, test, token, uninstall, unpublish, unstar,
+    update, version, view, whoami
+
+Specify configs in the ini-formatted file:
+    /home/developer/.npmrc
+or on the command line via: npm <command> --key=value
+
+More configuration info: npm help config
+Configuration fields: npm help 7 config
+
+npm@7.0.15 /usr/lib/node_modules/npm
+
+
+developer@1d2c63beaac9:~/VoTT$ npm run-script electron:run:dev
+
+> vott@2.2.0 electron:run:dev
+> npm run webpack:dev && electron . --remote-debugging-port=9223
+

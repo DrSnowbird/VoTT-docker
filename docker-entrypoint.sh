@@ -8,7 +8,6 @@ env
 #### ---- Default, we use base images's "developer"               ----
 NON_ROOT_USER=${NON_ROOT_USER:-"developer"}
 
-
 #### ------------------------------------------------------------------------
 #### ---- Extra line added in the script to run all command line arguments
 #### ---- To keep the docker process staying alive if needed.
@@ -34,10 +33,9 @@ if [ $# -gt 0 ]; then
     #### ---- Use gosu (or su-exec) to drop to a non-root user
     #exec gosu ${NON_ROOT_USER} ${PRODUCT_EXE} "$@"
 else
-    #/bin/bash
     cd $HOME/VoTT
-    npm install npm@7.10.0
-    npm ci
+    ##npm install npm@7.13.0 # npm@7.10.0
+    ##npm ci
     npm start
 fi
 

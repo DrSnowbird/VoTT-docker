@@ -1,26 +1,21 @@
-# VoTT Docker with X11 Desktop UI and Web-based GUI
-## Run
-* It will download 'openkbs/VoTT' on-the-fly to use if not existing.
+# VoTT Docker for LOCAL File Access (non-cloud) with X11 Desktop UI
+The goal of this Docker is to run VoTT to use LOCAL files (without the need of cloud as requirements)
+
+# Run
+* It will download 'openkbs/vott-docker' on-the-fly to use if not existing locally.
 ```
+xhost +
 ./run.sh
 ```
-And, you have two ways to access the VoTT GUI:
+  * If the above vott-docker run does not pop up X11 Desktop GUI on your Desktop, it means that your environment is not set up to run X11. Please refer to [X11 Issues](https://github.com/DrSnowbird/jdk-mvn-py3-x11#display-x11-issue) for more information. Or, you can google-search 'X11 docker not display' for more troubleshooting guide)
+
+  * It will also start web-based VOTT. You can just ignore it since the goal of this project is to provide 'LOCAL File Access' VOTT by this Docker
+
+# Build (local image if desired)
 ```
-
-1. It will pop up open X11 Desktop GUI (if your Unix Host has open X11 using 'xhost +' command and proper export DISPLAY=... setup)
-2. Or, if fail X11, use your Web Browser to open Web-based GUI
-
-http://127.0.0.1:13000/
-```
-
-Note that, currently, the build of Dockerfile can't pre-install all needed NPM packages. Hence, the above command will take a bit longer to start up and it will require the Internet access. This is something not practical for some corporations running this Container without the Internet access.
-
-## Build (to local image if desired)
-```
+make build
+or
 ./build.sh
-
-```
-
 ---
 
 #### (Inherited from upstream ... )
