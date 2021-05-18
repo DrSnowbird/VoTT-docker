@@ -15,7 +15,7 @@ WORKDIR ${HOME}/VoTT
 COPY . .
 RUN sudo chown -R $USER:$USER ${HOME} && \
     ls -al $HOME/VoTT
-RUN npm install # ci
+RUN npm ci
 
 #### ------------------------
 #### ---- Use entrypoint ----
