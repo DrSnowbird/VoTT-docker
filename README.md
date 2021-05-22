@@ -7,9 +7,17 @@ The goal of this Docker is to run VoTT to use LOCAL files (without the need of c
 xhost +
 ./run.sh
 ```
-  * If the above vott-docker run does not pop up X11 Desktop GUI on your Desktop, it means that your environment is not set up to run X11. Please refer to [X11 Issues](https://github.com/DrSnowbird/jdk-mvn-py3-x11#display-x11-issue) for more information. Or, you can google-search 'X11 docker not display' for more troubleshooting guide)
+  * If the above vott-docker run does not pop up X11 Desktop GUI on your Desktop, it means that your environment is not set up to run X11. Please refer to [X11 Issues](https://github.com/DrSnowbird/jdk-mvn-py3-x11#display-x11-issue) for more information. Or, you can google-search 'X11 docker not display' for more troubleshooting guide.
 
   * It will also start web-based VOTT. You can just ignore it since the goal of this project is to provide 'LOCAL File Access' VOTT by this Docker
+  
+# Access Local (HOST of the Docker) directories
+By default, the '.env' configuration will setup the mapping between your local './vott-docker' directories (in the HOST of the Docker) and the guest directories (inside the Docker Container) as below:
+```
+./data <--> /home/developer/data
+./workspace <--> /home/developer/workspace
+```
+Any file in your local directories above (left sides) will be read/write-able inside the Container (right sides), and vice-versa.
 
 # Build (local image if desired)
 ```
